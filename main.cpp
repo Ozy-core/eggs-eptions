@@ -122,8 +122,10 @@ int main()
     eggCarton.addEgg(new chocolateEgg("milk chocolate", "medium"));
     eggCarton.addEgg(new goodEgg("lemon", "large"));
 
+    for (int i; i < 12; i++)
+    {
+        eggCarton.eatNextEgg();
+    }
     
-
-    
-
+    return 0;
 }
