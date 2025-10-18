@@ -64,7 +64,7 @@ public:
     chocolateEgg(string f, string s) : egg(f, s) {}
     void eatEgg()
     {
-        cout << " That was a delicious chocolate egg!" << endl;
+        cout << "That was a delicious chocolate egg!" << endl;
         egg::eatEgg();
     }
 };
