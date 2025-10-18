@@ -27,7 +27,7 @@ public:
 
     void eatEgg()
     {
-        cout << "Yum! You ate a " << flavor << " egg of size " << size << ".";
+        cout << "Yum! You ate a " << flavor << " egg of size " << size << "."<< endl;
     }
 
 
