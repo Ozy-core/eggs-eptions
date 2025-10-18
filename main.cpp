@@ -108,5 +108,22 @@ public:
 
 int main()
 {
+    carton eggCarton;
+    eggCarton.addEgg(new goodEgg("vanilla", "large"));
+    eggCarton.addEgg(new chocolateEgg("chocolate", "medium"));
+    eggCarton.addEgg(new rottenEgg("sulfur", "small"));
+    eggCarton.addEgg(new rottenEgg("moldy", "small"));
+    eggCarton.addEgg(new goodEgg("blueberry", "large"));
+    eggCarton.addEgg(new chocolateEgg("white chocolate", "medium"));
+    eggCarton.addEgg(new goodEgg("strawberry", "large"));
+    eggCarton.addEgg(new rottenEgg("rotten", "small"));
+    eggCarton.addEgg(new chocolateEgg("dark chocolate", "medium"));
+    eggCarton.addEgg(new goodEgg("pumpkin spice", "large"));
+    eggCarton.addEgg(new chocolateEgg("milk chocolate", "medium"));
+    eggCarton.addEgg(new goodEgg("lemon", "large"));
+
+    
+
+    
 
 }
