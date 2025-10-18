@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <memory>
 #include <exception>
+
+using namespace std;
 
 class badEgg : public std::exception {
 public:
@@ -13,26 +14,95 @@ public:
 
 class egg
 {
+private:
+    string flavor;
+    string size;
+public:
+
+    egg (string f, string s)
+    {
+        flavor = f;
+        size = s;
+    }
+
+    void eatEgg()
+    {
+        cout << "Yum! You ate a " << flavor << " egg of size " << size << ".";
+    }
+
 
 };
 
 class goodEgg : public egg
 {
+public:
+    goodEgg(string f, string s) : egg(f, s) {}
+
+    void eatEgg()
+    {
+        egg::eatEgg();
+        cout << " That was a good egg!" << endl;
+    }
 
 };
 
 class rottenEgg : public egg
 {
-
+public:
+    rottenEgg(string f, string s) : egg(f, s) {}
+    void eatEgg()
+    {
+        throw badEgg();
+    }
 };
 
 class chocolateEgg : public egg
 {
-
+public:
+    chocolateEgg(string f, string s) : egg(f, s) {}
+    void eatEgg()
+    {
+        egg::eatEgg();
+        cout << " That was a delicious chocolate egg!" << endl;
+    }
 };
 
 class carton
 {
+private:
+    vector<egg*> eggs;
+public:
+    void addEgg(egg* e)
+    {
+        if (eggs.size() >= 12)
+        {
+            cout << "Carton is full!" << endl;
+            return;
+        }else
+        {
+            eggs.push_back(e);
+        }
+    }
+
+    void eatNextEgg()
+    {
+        if (eggs.empty())
+        {
+            cout << "No more eggs to eat!" << endl;
+            return;
+        }
+        egg* e = eggs.back();
+        eggs.pop_back();
+        try
+        {
+            e->eatEgg();
+        }
+        catch (badEgg& be)
+        {
+            cout << be.what() << endl;
+        }
+        delete e;
+    }
 
 };
 
