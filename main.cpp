@@ -25,7 +25,9 @@ public:
         size = s;
     }
 
-    void eatEgg()
+    virtual ~egg() {}
+
+    virtual void eatEgg()
     {
         cout << "Yum! You ate a " << flavor << " egg of size " << size << "."<< endl;
     }
@@ -40,8 +42,8 @@ public:
 
     void eatEgg()
     {
-        egg::eatEgg();
         cout << " That was a good egg!" << endl;
+        egg::eatEgg();
     }
 
 };
@@ -62,8 +64,8 @@ public:
     chocolateEgg(string f, string s) : egg(f, s) {}
     void eatEgg()
     {
-        egg::eatEgg();
         cout << " That was a delicious chocolate egg!" << endl;
+        egg::eatEgg();
     }
 };
 
