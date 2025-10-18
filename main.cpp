@@ -109,9 +109,10 @@ public:
 int main()
 {
     carton eggCarton;
+
     eggCarton.addEgg(new goodEgg("vanilla", "large"));
     eggCarton.addEgg(new chocolateEgg("chocolate", "medium"));
-    eggCarton.addEgg(new rottenEgg("sulfur", "small"));
+    eggCarton.addEgg(new egg("sulfur", "small"));
     eggCarton.addEgg(new rottenEgg("moldy", "small"));
     eggCarton.addEgg(new goodEgg("blueberry", "large"));
     eggCarton.addEgg(new chocolateEgg("white chocolate", "medium"));
@@ -120,12 +121,12 @@ int main()
     eggCarton.addEgg(new chocolateEgg("dark chocolate", "medium"));
     eggCarton.addEgg(new goodEgg("pumpkin spice", "large"));
     eggCarton.addEgg(new chocolateEgg("milk chocolate", "medium"));
-    eggCarton.addEgg(new goodEgg("lemon", "large"));
+    eggCarton.addEgg(new egg("lemon", "large"));
 
-    for (int i; i < 12; i++)
+    for (int i=0; i < 12; i++)
     {
         eggCarton.eatNextEgg();
     }
-    
+
     return 0;
 }
